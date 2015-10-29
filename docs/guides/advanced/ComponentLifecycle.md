@@ -24,19 +24,19 @@ Consider this route config:
 
     | Component | Lifecycle Hooks called |
     |-----------|------------------------|
-    | App | `componentDidMount` |
-    | Home | `componentDidMount` |
-    | Invoice | N/A |
-    | Account | N/A |
+    | `App` | `componentDidMount` |
+    | `Home` | `componentDidMount` |
+    | `Invoice` | N/A |
+    | `Account` | N/A |
 
 2. Now they navigate from `/` to `/invoice/123`
 
     | Component | Lifecycle Hooks called |
     |-----------|------------------------|
-    | App | `componentWillReceiveProps`, `componentDidUpdate` |
-    | Home | `componentWillUnmount` |
-    | Invoice | `componentDidMount` |
-    | Account | N/A |
+    | `App` | `componentWillReceiveProps`, `componentDidUpdate` |
+    | `Home` | `componentWillUnmount` |
+    | `Invoice` | `componentDidMount` |
+    | `Account` | N/A |
 
     - `App` gets `componentWillReceiveProps` and `componentDidUpdate` because it
     stayed rendered but just received new props from the router (like:
@@ -49,10 +49,10 @@ Consider this route config:
 
     | Component | Lifecycle Hooks called |
     |-----------|------------------------|
-    | App | componentWillReceiveProps, componentDidUpdate |
-    | Home | N/A |
-    | Invoice | componentWillReceiveProps, componentDidUpdate |
-    | Account | N/A |
+    | `App` | `componentWillReceiveProps`, `componentDidUpdate` |
+    | `Home` | N/A |
+    | `Invoice` | `componentWillReceiveProps`, `componentDidUpdate` |
+    | `Account` | N/A |
 
     All the components that were mounted before, are still mounted, they
     just receive new props from the router.
@@ -61,10 +61,10 @@ Consider this route config:
 
     | Component | Lifecycle Hooks called |
     |-----------|------------------------|
-    | App | componentWillReceiveProps, componentDidUpdate |
-    | Home | N/A |
-    | Invoice | componentWillUnmount |
-    | Account | componentDidMount |
+    | `App` | `componentWillReceiveProps`, `componentDidUpdate` |
+    | `Home` | N/A |
+    | `Invoice` | `componentWillUnmount` |
+    | `Account` | `componentDidMount` |
 
 ### Fetching Data
 
